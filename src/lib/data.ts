@@ -14,6 +14,8 @@ export type Service = {
   features: string[];
   benefits: { title: string; text: string }[];
   ideal: string[];
+  /** Photo d'illustration (public/) */
+  image?: string;
 };
 
 export const SERVICES: Service[] = [
@@ -31,6 +33,7 @@ export const SERVICES: Service[] = [
       { title: "Confort", text: "Meilleure isolation thermique et acoustique." },
     ],
     ideal: ["Salons", "Chambres", "Bureaux", "Commerces", "Hôtels"],
+    image: "/realisations/plafond_02.jpg",
   },
   {
     slug: "cloisons-doublages",
@@ -46,6 +49,7 @@ export const SERVICES: Service[] = [
       { title: "Isolation", text: "Laine minérale intégrée pour le calme et la fraîcheur." },
     ],
     ideal: ["Open spaces", "Appartements", "Boutiques", "Cliniques"],
+    image: "/realisations/plafond_11.jpg",
   },
   {
     slug: "staff-corniches",
@@ -61,6 +65,7 @@ export const SERVICES: Service[] = [
       { title: "Durabilité", text: "Matériaux stables, adaptés au climat local." },
     ],
     ideal: ["Salles à manger", "Salons", "Halls d'entrée", "Restaurants"],
+    image: "/realisations/plafond_14.jpg",
   },
   {
     slug: "eclairage-integre",
@@ -76,6 +81,7 @@ export const SERVICES: Service[] = [
       { title: "Intégration", text: "Aucun câble visible, tout est encastré." },
     ],
     ideal: ["Salons", "Chambres", "Vitrines", "Réceptions"],
+    image: "/realisations/plafond_20.jpg",
   },
   {
     slug: "decoration-interieure",
@@ -91,6 +97,7 @@ export const SERVICES: Service[] = [
       { title: "Cohérence", text: "Un style homogène, du plafond aux murs." },
     ],
     ideal: ["Salons", "Chambres", "Bureaux de direction", "Hôtels"],
+    image: "/realisations/plafond_10.jpg",
   },
   {
     slug: "enduits-peinture",
@@ -105,6 +112,7 @@ export const SERVICES: Service[] = [
       { title: "Propreté", text: "Ponçage et nettoyage maîtrisés." },
     ],
     ideal: ["Neuf", "Rénovation", "Bureaux", "Logements"],
+    image: "/realisations/plafond_01.jpg",
   },
 ];
 
@@ -128,6 +136,8 @@ export type Project = {
   scope: string[];
   service: ServiceSlug;
   tone: "warm" | "sand" | "night";
+  /** Photo réelle (public/). À défaut, une illustration est générée. */
+  image?: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -143,6 +153,7 @@ export const PROJECTS: Project[] = [
     scope: ["Ossature et plaques BA13", "Gorge LED périphérique", "8 spots encastrés", "Enduits et peinture"],
     service: "faux-plafonds",
     tone: "warm",
+    image: "/realisations/plafond_02.jpg",
   },
   {
     slug: "meuble-tv-niches",
@@ -156,6 +167,7 @@ export const PROJECTS: Project[] = [
     scope: ["Structure du meuble TV", "Niches éclairées LED", "Passage de câbles masqué", "Finition peinture"],
     service: "decoration-interieure",
     tone: "night",
+    image: "/realisations/plafond_10.jpg",
   },
   {
     slug: "open-space-cloisonnement",
@@ -165,36 +177,39 @@ export const PROJECTS: Project[] = [
     city: "Douala",
     type: "Bureaux",
     summary:
-      "Redistribution d'un plateau en bureaux fermés et salle de réunion, avec isolation phonique renforcée.",
-    scope: ["Cloisons sur ossature", "Isolation laine minérale", "Intégration des portes", "Bandes et enduits"],
+      "Redistribution d'un plateau en bureaux fermés et salle de réunion, avec cloisons vitrées pour garder la lumière naturelle.",
+    scope: ["Cloisons vitrées sur ossature", "Cloisons plâtre isolées", "Intégration des portes", "Bandes et enduits"],
     service: "cloisons-doublages",
     tone: "sand",
+    image: "/realisations/plafond_11.jpg",
   },
   {
     slug: "chambre-deux-niveaux",
-    title: "Chambre — plafond à deux niveaux",
+    title: "Chambre — tête de lit et éclairage LED",
     cat: "plafond",
     label: "Faux plafond",
     city: "Yaoundé",
     type: "Villa",
     summary:
-      "Plafond à double niveau avec éclairage indirect au-dessus du lit pour une atmosphère apaisante.",
-    scope: ["Double niveau", "Ruban LED blanc chaud", "Spots orientables", "Peinture mate"],
-    service: "faux-plafonds",
+      "Habillage mural derrière le lit et gorge LED en plafond pour une lumière indirecte et une atmosphère apaisante.",
+    scope: ["Habillage tête de lit", "Gorge LED blanc chaud", "Appliques intégrées", "Peinture mate"],
+    service: "eclairage-integre",
     tone: "warm",
+    image: "/realisations/plafond_20.jpg",
   },
   {
     slug: "corniches-rosace",
-    title: "Corniches et rosace de salle à manger",
-    cat: "deco",
-    label: "Décoration",
+    title: "Plafond à caissons et corniches LED",
+    cat: "plafond",
+    label: "Faux plafond",
     city: "Douala",
     type: "Résidence privée",
     summary:
-      "Pose de corniches moulurées et d'une rosace centrale pour mettre en valeur le lustre de la salle à manger.",
-    scope: ["Corniches staff", "Rosace centrale", "Raccords et reprises", "Mise en peinture"],
+      "Plafond à caissons superposés avec corniches lumineuses LED et rosace centrale pour mettre en valeur le lustre.",
+    scope: ["Caissons à plusieurs niveaux", "Corniches LED", "Rosace centrale", "Mise en peinture"],
     service: "staff-corniches",
     tone: "sand",
+    image: "/realisations/plafond_14.jpg",
   },
   {
     slug: "commerce-doublage",
@@ -208,6 +223,7 @@ export const PROJECTS: Project[] = [
     scope: ["Doublage des murs", "Habillage de poteaux", "Éclairage vitrine", "Finitions"],
     service: "cloisons-doublages",
     tone: "night",
+    image: "/realisations/bibliotheque-caisson-spots.jpg",
   },
 ];
 
@@ -243,3 +259,49 @@ export const FAQS = [
 
 export const SERVICE_OPTIONS = [...SERVICES.map((s) => s.title), "Autre"];
 export const CITY_OPTIONS = ["Douala", "Yaoundé", "Autre"];
+
+/** Galerie photo complète (public/realisations). */
+export type GalleryRoom = "salon" | "chambre" | "repas" | "eau" | "entree" | "deco";
+
+export const GALLERY_ROOMS: { key: GalleryRoom | "all"; label: string }[] = [
+  { key: "all", label: "Toutes" },
+  { key: "salon", label: "Salons & séjours" },
+  { key: "chambre", label: "Chambres" },
+  { key: "repas", label: "Salles à manger" },
+  { key: "eau", label: "Salles de bain" },
+  { key: "entree", label: "Entrées & couloirs" },
+  { key: "deco", label: "Détails & déco" },
+];
+
+export const GALLERY: { src: string; title: string; room: GalleryRoom; alt: string; w: number; h: number }[] = [
+  { src: "/realisations/plafond_02.jpg", title: "Salon — caisson LED et suspension circulaire", room: "salon", alt: "Salon avec faux plafond à caisson, lignes LED et suspension circulaire", w: 1401, h: 1600 },
+  { src: "/realisations/plafond_14.jpg", title: "Séjour — caissons superposés et rosace", room: "salon", alt: "Séjour avec plafond à caissons superposés, corniches LED et rosace", w: 1600, h: 1597 },
+  { src: "/realisations/plafond_10.jpg", title: "Mur TV — arche lumineuse et niches", room: "deco", alt: "Mur TV en plâtre avec arche lumineuse, niches éclairées et plafond circulaire", w: 1600, h: 1465 },
+  { src: "/realisations/plafond_01.jpg", title: "Chambre — caisson plat et spots", room: "chambre", alt: "Faux plafond plat avec gorge lumineuse et spots encastrés", w: 1486, h: 1600 },
+  { src: "/realisations/plafond_03.jpg", title: "Plafond — motifs géométriques lumineux", room: "deco", alt: "Plafond à motifs géométriques lumineux en plâtre", w: 1343, h: 1600 },
+  { src: "/realisations/plafond_04.jpg", title: "Séjour — plafond à décrochés et anneaux", room: "salon", alt: "Faux plafond à décrochés avec spots et suspension à anneaux", w: 899, h: 1600 },
+  { src: "/realisations/plafond_06.jpg", title: "Salon — lignes LED en cours de finition", room: "salon", alt: "Plafond avec lignes LED et spots, en cours de finition", w: 909, h: 1600 },
+  { src: "/realisations/plafond_07.jpg", title: "Salon — caisson et lignes LED croisées", room: "salon", alt: "Caisson lumineux avec lignes LED croisées", w: 1187, h: 1600 },
+  { src: "/realisations/plafond_08.jpg", title: "Chambre — profilés LED et spots", room: "chambre", alt: "Plafond avec profilés LED encastrés et spots", w: 1076, h: 1600 },
+  { src: "/realisations/plafond_09.jpg", title: "Chantier — profilés LED avant peinture", room: "deco", alt: "Profilés LED encastrés dans un plafond avant peinture", w: 1600, h: 1208 },
+  { src: "/realisations/plafond_11.jpg", title: "Appartement — gorge LED et lignes lumineuses", room: "salon", alt: "Pièce avec faux plafond, gorge LED et lignes lumineuses", w: 1101, h: 1600 },
+  { src: "/realisations/plafond_12.jpg", title: "Salon — gorges lumineuses et suspension", room: "salon", alt: "Plafond à décroché avec gorges lumineuses et suspension", w: 1600, h: 1600 },
+  { src: "/realisations/plafond_13.jpg", title: "Salon — caisson central à motif LED", room: "salon", alt: "Caisson central avec motif LED et gorge lumineuse chaude", w: 1600, h: 1600 },
+  { src: "/realisations/plafond_15.jpg", title: "Chambre — lignes LED géométriques", room: "chambre", alt: "Plafond avec lignes LED géométriques", w: 1600, h: 1200 },
+  { src: "/realisations/plafond_16.jpg", title: "Décoration — encadrement en staff", room: "deco", alt: "Encadrement mural en staff et corniche décorative", w: 1600, h: 1200 },
+  { src: "/realisations/plafond_17.jpg", title: "Hall d'entrée — caissons lumineux", room: "entree", alt: "Hall avec plafond à caissons lumineux et spots", w: 1600, h: 1200 },
+  { src: "/realisations/plafond_18.jpg", title: "Couloir — gorge LED et spots", room: "entree", alt: "Couloir avec gorge lumineuse LED et spots encastrés", w: 1600, h: 1200 },
+  { src: "/realisations/plafond_19.jpg", title: "Séjour — caisson et spots encastrés", room: "salon", alt: "Faux plafond à caisson avec gorge LED et spots", w: 1460, h: 1600 },
+  { src: "/realisations/plafond_20.jpg", title: "Chambre — caisson lumineux et suspension", room: "chambre", alt: "Caisson lumineux avec suspension à anneaux et spots carrés", w: 1600, h: 1600 },
+  { src: "/realisations/salon-caissons-arrondis-lustre.jpg", title: "Salon — caissons arrondis et lustre cristal", room: "salon", alt: "Salon avec faux plafond à caissons arrondis, gorges LED, spots et lustre en cristal", w: 1200, h: 1600 },
+  { src: "/realisations/sejour-lignes-led.jpg", title: "Séjour ouvert — lignes LED encastrées", room: "salon", alt: "Séjour et salle à manger avec lignes LED encastrées dans un plafond plat", w: 1600, h: 1591 },
+  { src: "/realisations/salle-a-manger-caisson-circulaire.jpg", title: "Salle à manger — caisson circulaire lumineux", room: "repas", alt: "Salle à manger avec grand caisson circulaire, gorge LED et lustre boule", w: 1280, h: 1600 },
+  { src: "/realisations/salon-double-caisson-lustre.jpg", title: "Salon — double caisson carré et lustre", room: "salon", alt: "Plafond à double caisson carré avec gorge lumineuse chaude et lustre", w: 1514, h: 1600 },
+  { src: "/realisations/plafond-lignes-led-angle.jpg", title: "Plafond — lignes LED en angle", room: "deco", alt: "Plafond plat avec profilés LED en angle et gorge périphérique", w: 1600, h: 1024 },
+  { src: "/realisations/bibliotheque-caisson-spots.jpg", title: "Bureau-bibliothèque — caisson suspendu et spots", room: "deco", alt: "Bureau-bibliothèque avec caisson suspendu, spots décoratifs et gorge LED blanche", w: 1600, h: 1200 },
+  { src: "/realisations/chambre-cercles-concentriques.jpg", title: "Chambre — cercles concentriques lumineux", room: "chambre", alt: "Plafond à cercles concentriques lumineux avec spots, au-dessus d'une tête de lit éclairée", w: 1600, h: 1600 },
+  { src: "/realisations/dressing-lignes-led.jpg", title: "Dressing — lignes LED et gorge périphérique", room: "chambre", alt: "Plafond de dressing avec lignes LED en décalé et gorge lumineuse", w: 1600, h: 1600 },
+  { src: "/realisations/salle-a-manger-suspensions.jpg", title: "Salle à manger — double caisson et suspensions", room: "repas", alt: "Salle à manger avec double caisson lumineux, spots et suspensions dorées", w: 1600, h: 1200 },
+  { src: "/realisations/salle-de-bain-lignes-led.jpg", title: "Salle de bain — lignes LED en plafond hydrofuge", room: "eau", alt: "Salle de bain avec plafond hydrofuge et lignes LED géométriques", w: 1281, h: 1600 },
+  { src: "/realisations/salle-d-eau-lignes-gorge.jpg", title: "Salle d'eau — lignes LED et gorge chaude", room: "eau", alt: "Salle d'eau avec lignes LED blanches et gorge lumineuse chaude", w: 1436, h: 1600 },
+];

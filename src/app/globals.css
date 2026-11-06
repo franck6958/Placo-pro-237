@@ -1,20 +1,49 @@
 @import "tailwindcss";
 
+/*
+ * PLACO PRO 237 — design tokens (charte graphique)
+ *
+ * Bleu marine   #14284B  couleur principale  → ink (titres, fonds sombres)
+ * Gris graphite #4B4844  secondaire, textes  → ink-soft / muted
+ * Orange chantier #D9620F accent, usage limité → gold (décor, aplats, filets LED)
+ *
+ * Contrastes (WCAG AA) :
+ *   - texte orange sur fond clair : utiliser `accent` (#B5500A, 4.7:1), jamais `gold` (3.4:1)
+ *   - texte sur aplat orange (bg-gold-gradient) : blanc
+ *   - petit texte orange sur fond marine : `gold-light` (#F08A3E, 5.9:1)
+ * Les noms de tokens (gold, plaster…) sont conservés pour ne pas toucher aux composants.
+ */
 @theme {
-  --color-plaster: #f5f1ea;
-  --color-plaster-2: #ece5d9;
-  --color-plaster-3: #e2d9ca;
-  --color-ink: #1e1e1c;
-  --color-ink-soft: #4a4844;
-  --color-muted: #6e6a63;
-  --color-accent: #b5562e;
-  --color-accent-dark: #8e3f1f;
-  --color-gold: #c9a46a;
-  --color-night: #141413;
-  --color-line: rgb(30 30 28 / 0.12);
+  /* Fonds clairs — blanc cassé neutre */
+  --color-plaster: #f7f6f4;
+  --color-plaster-2: #efedea;
+  --color-plaster-3: #e3e0dc;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fraunces), Georgia, serif;
+  /* Bleu marine + gris graphite */
+  --color-ink: #14284b;
+  --color-ink-soft: #4b4844;
+  --color-muted: #6b6762;
+  --color-navy: #1d3763;
+  --color-navy-2: #27477c;
+  --color-night: #0c1a33;
+  --color-mist: #aab4c8;
+
+  /* Orange chantier */
+  --color-gold: #d9620f;
+  --color-gold-light: #f08a3e;
+  --color-gold-pale: #fbe1cc;
+  --color-accent: #b5500a;
+  --color-accent-dark: #96420a;
+
+  --color-line: rgb(20 40 75 / 0.12);
+  --color-line-dark: rgb(255 255 255 / 0.12);
+
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 30px 60px -30px rgb(20 40 75 / 0.18);
+  --shadow-lift: 0 40px 100px -40px rgb(20 40 75 / 0.27);
+  --shadow-glow: 0 12px 32px -12px rgb(217 98 15 / 0.55);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -37,18 +66,50 @@
   }
   h1, h2, h3, h4 {
     @apply font-display;
-    font-weight: 600;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
     text-wrap: balance;
   }
   p { text-wrap: pretty; }
-  ::selection { background: var(--color-accent); color: #fff; }
+  ::selection { background: var(--color-gold); color: #fff; }
   :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 3px;
     border-radius: 6px;
   }
+  /* Sur fond sombre, l'anneau de focus passe à l'or clair */
+  .theme-dark :focus-visible,
+  .theme-dark:focus-visible {
+    outline-color: var(--color-gold-light);
+  }
+}
+
+/* ---------- Utilitaires de marque (utilisables avec hover:, md:, etc.) ---------- */
+
+/* Aplat orange chantier — CTA principal, pastilles. Texte : blanc (4.6:1 minimum). */
+@utility bg-gold-gradient {
+  background-image: linear-gradient(135deg, #c9590c 0%, #b8520b 100%);
+}
+/* Titre / chiffre en or dégradé (à réserver aux fonds sombres ou grands corps) */
+@utility text-gold-gradient {
+  background-image: linear-gradient(180deg, #f08a3e 0%, #d9620f 60%, #b5500a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* Fond bleu marine avec halo orange façon gorge LED */
+@utility bg-navy-glow {
+  background-color: var(--color-ink);
+  background-image:
+    radial-gradient(60% 50% at 50% 0%, rgb(217 98 15 / 0.18), transparent 70%),
+    linear-gradient(180deg, var(--color-ink) 0%, var(--color-night) 100%);
+}
+/* Filet lumineux or (séparateur, gorge LED) */
+@utility led-line {
+  height: 1px;
+  background-image: linear-gradient(90deg, transparent, var(--color-gold-light) 20%, var(--color-gold) 50%, var(--color-gold-light) 80%, transparent);
+  box-shadow: 0 0 12px 1px rgb(240 138 62 / 0.5);
 }
 
 @layer components {
@@ -56,14 +117,19 @@
     width: min(1240px, 100% - 2.5rem);
     margin-inline: auto;
   }
+  /* Sur-titre : or profond sur fond clair ; ajouter .eyebrow-invert (ou text-gold) sur fond sombre */
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-accent;
+    @apply inline-flex items-center gap-2.5 text-[0.75rem] font-bold uppercase tracking-[0.2em] text-accent;
   }
   .eyebrow::before {
     content: "";
-    width: 22px;
-    height: 1px;
-    background: currentColor;
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+  }
+  .eyebrow-invert {
+    @apply text-gold-light;
   }
   /* Grain subtil façon plâtre */
   .grain::after {
@@ -73,10 +139,31 @@
     pointer-events: none;
     opacity: 0.35;
     mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.45 0 0 0 0 0.4 0 0 0 .08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.29 0 0 0 0 0.27 0 0 0 .08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  /* Reflet lumineux qui balaie les boutons au survol */
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.4) 50%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform 0.8s var(--ease-out-expo);
+  }
+  .btn-shine:hover::after {
+    transform: translateX(120%);
   }
   .grid-lines {
     background-image: repeating-linear-gradient(90deg, transparent 0 119px, var(--color-line) 119px 120px);
+  }
+  .grid-lines-dark {
+    background-image: repeating-linear-gradient(90deg, transparent 0 119px, var(--color-line-dark) 119px 120px);
   }
 }
 
@@ -87,4 +174,5 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+  .btn-shine::after { display: none; }
 }

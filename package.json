@@ -6,9 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:apk": "python scripts/build_apk.py",
+    "build:wordpress": "python scripts/build_wordpress.py"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "lenis": "^1.3.27",
+    "motion": "^14.9.1",
     "next": "16.4.5",
     "react": "19.3.0",
     "react-dom": "19.3.0"
