@@ -1,0 +1,164 @@
+{
+ "parts": [
+  "placo-pro-237-photos-1.zip",
+  "placo-pro-237-photos-2.zip",
+  "placo-pro-237-photos-3.zip"
+ ],
+ "files": [
+  {
+   "path": "realisations/plafond_10.jpg",
+   "size": 197786,
+   "part": "placo-pro-237-photos-1.zip"
+  },
+  {
+   "path": "realisations/plafond_16.jpg",
+   "size": 226508,
+   "part": "placo-pro-237-photos-1.zip"
+  },
+  {
+   "path": "realisations/plafond_17.jpg",
+   "size": 274363,
+   "part": "placo-pro-237-photos-1.zip"
+  },
+  {
+   "path": "realisations/salle-a-manger-caisson-circulaire.jpg",
+   "size": 265064,
+   "part": "placo-pro-237-photos-1.zip"
+  },
+  {
+   "path": "realisations/salle-a-manger-suspensions.jpg",
+   "size": 216628,
+   "part": "placo-pro-237-photos-1.zip"
+  },
+  {
+   "path": "realisations/salle-de-bain-lignes-led.jpg",
+   "size": 203449,
+   "part": "placo-pro-237-photos-1.zip"
+  },
+  {
+   "path": "realisations/salon-caissons-arrondis-lustre.jpg",
+   "size": 215050,
+   "part": "placo-pro-237-photos-1.zip"
+  },
+  {
+   "path": "realisations/sejour-lignes-led.jpg",
+   "size": 260974,
+   "part": "placo-pro-237-photos-1.zip"
+  },
+  {
+   "path": "realisations/bibliotheque-caisson-spots.jpg",
+   "size": 123809,
+   "part": "placo-pro-237-photos-2.zip"
+  },
+  {
+   "path": "realisations/plafond_01.jpg",
+   "size": 109282,
+   "part": "placo-pro-237-photos-2.zip"
+  },
+  {
+   "path": "realisations/plafond_02.jpg",
+   "size": 154400,
+   "part": "placo-pro-237-photos-2.zip"
+  },
+  {
+   "path": "realisations/plafond_06.jpg",
+   "size": 118318,
+   "part": "placo-pro-237-photos-2.zip"
+  },
+  {
+   "path": "realisations/plafond_07.jpg",
+   "size": 133774,
+   "part": "placo-pro-237-photos-2.zip"
+  },
+  {
+   "path": "realisations/plafond_09.jpg",
+   "size": 112174,
+   "part": "placo-pro-237-photos-2.zip"
+  },
+  {
+   "path": "realisations/plafond_12.jpg",
+   "size": 137035,
+   "part": "placo-pro-237-photos-2.zip"
+  },
+  {
+   "path": "realisations/plafond_13.jpg",
+   "size": 192772,
+   "part": "placo-pro-237-photos-2.zip"
+  },
+  {
+   "path": "realisations/plafond_14.jpg",
+   "size": 146225,
+   "part": "placo-pro-237-photos-2.zip"
+  },
+  {
+   "path": "realisations/plafond_15.jpg",
+   "size": 116254,
+   "part": "placo-pro-237-photos-2.zip"
+  },
+  {
+   "path": "realisations/plafond_18.jpg",
+   "size": 113532,
+   "part": "placo-pro-237-photos-2.zip"
+  },
+  {
+   "path": "realisations/plafond_19.jpg",
+   "size": 96565,
+   "part": "placo-pro-237-photos-2.zip"
+  },
+  {
+   "path": "realisations/salle-d-eau-lignes-gorge.jpg",
+   "size": 187482,
+   "part": "placo-pro-237-photos-2.zip"
+  },
+  {
+   "path": "realisations/salon-double-caisson-lustre.jpg",
+   "size": 170467,
+   "part": "placo-pro-237-photos-2.zip"
+  },
+  {
+   "path": "_next/static/media/085db72eb113e6d7-s.148zpjuoy5uon.woff2",
+   "size": 72452,
+   "part": "placo-pro-237-photos-3.zip"
+  },
+  {
+   "path": "_next/static/media/e1f600cb732239d9-s.1mvr14jy3vxq7.woff2",
+   "size": 68224,
+   "part": "placo-pro-237-photos-3.zip"
+  },
+  {
+   "path": "realisations/chambre-cercles-concentriques.jpg",
+   "size": 107382,
+   "part": "placo-pro-237-photos-3.zip"
+  },
+  {
+   "path": "realisations/dressing-lignes-led.jpg",
+   "size": 107865,
+   "part": "placo-pro-237-photos-3.zip"
+  },
+  {
+   "path": "realisations/plafond_03.jpg",
+   "size": 105279,
+   "part": "placo-pro-237-photos-3.zip"
+  },
+  {
+   "path": "realisations/plafond_04.jpg",
+   "size": 94055,
+   "part": "placo-pro-237-photos-3.zip"
+  },
+  {
+   "path": "realisations/plafond_08.jpg",
+   "size": 89515,
+   "part": "placo-pro-237-photos-3.zip"
+  },
+  {
+   "path": "realisations/plafond_11.jpg",
+   "size": 104515,
+   "part": "placo-pro-237-photos-3.zip"
+  },
+  {
+   "path": "realisations/plafond_20.jpg",
+   "size": 108907,
+   "part": "placo-pro-237-photos-3.zip"
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+:HL["/_next/static/chunks/0t6mmv4msvdzo.css","style"]
+:HL["/_next/static/media/65341aea9fb91af5-s.p.1dqa_6e_ad4sj.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/f930139f24b0a17f-s.p.2w0lnotpt__ns.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":{"n":"slug","t":"d","k":"faux-plafonds","s":[]},"h":96,"c":"$Q3"}]]
+1:[["children",{"s":"services","h":64,"c":"$Q2"}]]
+0:{"b":"mkiDrvqP9Axsz_7owccOs","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
